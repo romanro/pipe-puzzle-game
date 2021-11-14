@@ -2,13 +2,13 @@ import { useSocket } from 'hooks';
 import React, { useCallback, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { GameView, Page404, StartView } from 'views';
-
+import styles from './App.module.scss';
 function App() {
     const socket = useSocket();
 
     const onMessage = useCallback((message) => {
-        const map = message.data?.replace('map:', '');
-        console.log(map);
+        // const map = message.data?.replace('map:', '');
+        //   console.log(map);
     }, []);
 
     useEffect(() => {
@@ -18,9 +18,6 @@ function App() {
         };
     }, [socket, onMessage]);
 
-    const startGame = () => {
-        socket.send('new 1');
-    };
     const getMap = () => {
         socket.send('map');
     };
@@ -30,16 +27,13 @@ function App() {
 
     return (
         <Router>
-            <div className='App'>
-                <button onClick={startGame}>START</button>
-                <button onClick={getMap}>get map</button>
-                <button onClick={rotate}>rotate</button>
+            <div className={styles.appContainer}>
+                <Routes>
+                    <Route path='/' element={<StartView />} />
+                    <Route path='game/:level' element={<GameView />} />
+                    <Route path='*' element={<Page404 />} />
+                </Routes>
             </div>
-            <Routes>
-                <Route path='/' element={<StartView />} />
-                <Route path='game/:level' element={<GameView />} />
-                <Route path='*' element={<Page404 />} />
-            </Routes>
         </Router>
     );
 }

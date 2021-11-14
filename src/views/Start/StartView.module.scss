@@ -1,1 +1,7 @@
 @import '../../styles/theme';
+
+.container {
+    text-align: center;
+    padding: $container-padding;
+    border: 7px double $text-color;
+}

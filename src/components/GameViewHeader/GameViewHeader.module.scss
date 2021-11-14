@@ -1,0 +1,9 @@
+@import '../../styles/theme';
+@import '../../styles/utils';
+
+.header {
+    @include d-flex(row, space-between, center);
+}
+.backLink {
+    text-decoration: none;
+}
