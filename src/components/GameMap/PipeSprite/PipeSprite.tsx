@@ -1,23 +1,18 @@
 import React, { FC, useMemo } from 'react';
-
 import { IPipeSpriteProps } from './PipeSprite.models';
-import styles from './PipeSprite.module.scss';
-import { mapCharToImage } from 'utils/pipePuzzleUtils';
-import classnames from 'classnames';
+import { mapCharToSprite } from 'utils/pipePuzzleUtils';
+import useImage from 'use-image';
+import { Image } from 'react-konva';
 
 export const PipeSprite: FC<IPipeSpriteProps> = React.memo(
     ({ char, size = 100, coordinates, onClick }: IPipeSpriteProps) => {
-        const { img, css } = useMemo(() => mapCharToImage(char), [char]);
+        const img = useMemo(() => mapCharToSprite(char), [char]);
+
+        const [image] = useImage(img);
         const { x, y } = coordinates;
 
         return (
-            <img
-                src={img}
-                style={{ width: size, height: size }}
-                alt={char}
-                className={classnames(styles.spriteImage, styles[css])}
-                onClick={() => onClick(x, y)}
-            />
+            <Image image={image} width={size} height={size} x={x * size} y={y * size} onClick={() => onClick(x, y)} />
         );
     }
 );

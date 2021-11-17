@@ -7,4 +7,7 @@ export enum WebSocketMessagesEnum {
 }
 export enum WebSocketResponsesEnum {
     NEW_GAME_STARTED = 'new: OK',
+    PIPE_ROTATED = 'rotate: OK',
+    INCORRECT = 'verify: Incorrect.',
+    NO_MORE_VERIFICATIONS = 'verify: Only 10 verifications allowed per attempt.',
 }
