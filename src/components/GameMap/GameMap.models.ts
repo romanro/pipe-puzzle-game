@@ -1,4 +1,5 @@
 export interface IGameMapProps {
     map: string | null;
-    size: number;
+    level: number;
+    onRotate: (x: number, y: number) => void;
 }

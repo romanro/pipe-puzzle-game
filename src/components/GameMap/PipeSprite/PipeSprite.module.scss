@@ -1,0 +1,26 @@
+@import '../../../styles/theme';
+@import '../../../styles/utils';
+
+.spriteImage {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    transform-origin: center;
+
+    &:hover {
+        z-index: +100;
+        outline: 2px solid $danger-color;
+    }
+
+    &.rotate90 {
+        @include rotate(90deg);
+    }
+    &.rotate180 {
+        @include rotate(180deg);
+    }
+    &.rotate270 {
+        @include rotate(270deg);
+    }
+}

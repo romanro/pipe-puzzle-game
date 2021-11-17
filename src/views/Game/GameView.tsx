@@ -13,6 +13,7 @@ export const GameView: FC = () => {
 
     const onMessage = useCallback(
         (message: MessageEvent<WebSocketResponsesEnum | string>) => {
+            console.log(message?.data);
             if ([WebSocketResponsesEnum.NEW_GAME_STARTED].includes(message?.data as WebSocketResponsesEnum)) {
                 // got success response of New Game or Rotate, should refresh the map
                 socket.send(WebSocketMessagesEnum.CURRENT_MAP);
@@ -41,10 +42,14 @@ export const GameView: FC = () => {
         };
     }, [socket, onMessage]);
 
+    const onRotatePipe = (x: number, y: number) => {
+        socket.send(`${WebSocketMessagesEnum.ROTATE} ${x} ${y}`);
+    };
+
     return (
         <div className={styles.gameViewContainer}>
             <GameViewHeader level={level} />
-            <GameMap map={gameMap} size={parseInt(level)} />
+            {gameMap && <GameMap map={gameMap} level={parseInt(level)} onRotate={onRotatePipe} />}
         </div>
     );
 };
