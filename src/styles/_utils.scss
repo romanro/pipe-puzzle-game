@@ -13,3 +13,6 @@
 @mixin rotate($deg) {
     transform: rotate($deg);
 }
+
+@mixin button($textColor, $bgColor, $borderColor) {
+}

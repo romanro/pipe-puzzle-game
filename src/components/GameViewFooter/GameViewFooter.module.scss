@@ -1,0 +1,6 @@
+@import '../../styles/utils';
+
+.footer {
+    padding: 7px;
+    @include d-flex;
+}

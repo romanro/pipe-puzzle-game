@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 export const useLocalStorage = (key: string) => {
-    const [currentValue, setCurrentValue] = useState<string | null>(() => {
+    const [currentValue, setCurrentValue] = useState<any | null>(() => {
         const item = localStorage.getItem(key);
-        return item ? JSON.parse(item) : {};
+        return item ? JSON.parse(item) : null;
     });
 
     useEffect(() => {
