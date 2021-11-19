@@ -16,3 +16,8 @@ export const BASE_GAME_LEVELS: IGameLevel[] = [
     { id: 5, name: 'Veteran Very Hard' },
     { id: 6, name: 'General' },
 ];
+
+export enum LocalStorageKeys {
+    LevelPasswords = 'levelPasswords',
+    MinTurns = 'levelMinTurns',
+}

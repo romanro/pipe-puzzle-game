@@ -5,3 +5,4 @@ export * from './GameViewFooter/GameViewFooter';
 export * from './GameMap/PipeSprite/PipeSprite';
 export * from './GameViewFooter/CountButton/CountButton';
 export * from './LoadingIndicator/LoadingIndicator';
+export * from './GameMessage/GameMessage';
