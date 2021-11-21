@@ -5,4 +5,5 @@
     @include full-screen-w-h;
     @include d-flex;
     margin: 0;
+    @include gradient(to top, $gradient2);
 }

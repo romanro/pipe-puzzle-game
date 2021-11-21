@@ -23,7 +23,9 @@ export const StartView: FC = () => {
 
     return (
         <div className={styles.container}>
-            <h1>THE PIPES PUZZLE</h1>
+            <h1 className={styles.gameHeader}>
+                THE PIPES<br></br>PUZZLE
+            </h1>
             <h3>Choose game level:</h3>
             <LevelsList levels={levels} />
         </div>

@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { ILevelsListProps } from './LevelsList.models';
@@ -8,9 +9,11 @@ export const LevelsList: FC<ILevelsListProps> = ({ levels = [] }: ILevelsListPro
         <ul className={styles.levelsList}>
             {levels.map((level) => (
                 <li key={level.id}>
-                    <Link className={styles.link} to={`/game/${level.id}`}>
+                    <Link
+                        className={classnames(styles.link, level.password ? styles.done : '')}
+                        to={`/game/${level.id}`}>
                         {level.name}
-                        {level.password && <span className={styles.password}>....{level.password}</span>}
+                        {level.password && <span className={styles.password}>Password: {level.password}</span>}
                     </Link>
                 </li>
             ))}

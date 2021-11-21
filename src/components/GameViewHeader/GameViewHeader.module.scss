@@ -3,7 +3,19 @@
 
 .header {
     @include d-flex(row, space-between, center);
+    color: $white-color;
+    padding: 10px 0;
 }
 .backLink {
-    text-decoration: none;
+    @include button($white-color, $blue-color1, $blue-color2, $blue-color, $page-bg-color-1);
+}
+.level {
+    font-family: $heading-font;
+    font-size: 28px;
+    margin: 0;
+}
+
+.turns {
+    margin: 0;
+    color: $danger-color;
 }

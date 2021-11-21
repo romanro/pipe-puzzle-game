@@ -6,10 +6,10 @@ import styles from './GameViewHeader.module.scss';
 export const GameViewHeader: FC<IGameViewHeaderProps> = ({ level, turnCounter }: IGameViewHeaderProps) => {
     return (
         <header className={styles.header}>
-            <h3>Level {level}</h3>
-            <h3>Turns: {turnCounter}</h3>
+            <h3 className={styles.level}>Level {level}</h3>
+            <h3 className={styles.turns}>Turns: {turnCounter}</h3>
             <Link className={styles.backLink} to={`/`}>
-                <button>BACK</button>
+                BACK
             </Link>
         </header>
     );

@@ -7,23 +7,39 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgba($color: $white-color, $alpha: 0.8);
+    background: rgba($color: $page-bg-color-2, $alpha: 0.8);
+    border-radius: $container-border-radius;
     @include d-flex;
 }
 
 .msg {
-    background: $white-color;
+    color: $white-color;
     text-align: center;
-    padding: 16px;
+    padding: $container-padding;
+    border-radius: $container-border-radius;
+
+    .msgTitle {
+        font-family: $heading-font;
+        font-size: 40px;
+        margin: 5px 0;
+        text-shadow: 0px 0px 8px $white-color;
+    }
 }
 
 .successMsg {
     @extend .msg;
-    background: $success-color;
-    color: $white-color;
+
+    .password {
+        background: $page-bg-color-2;
+        border-radius: $container-border-radius/4;
+        padding: 5px;
+    }
 }
 
 .errorMsg {
     @extend .msg;
-    background: $danger-color;
+}
+
+.btn {
+    @include button($white-color, $blue-color1, $blue-color2, $blue-color, $page-bg-color-1);
 }

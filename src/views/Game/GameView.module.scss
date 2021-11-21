@@ -2,6 +2,8 @@
 @import '../../styles/utils';
 
 .gameViewContainer {
-    padding: $container-padding;
     position: relative;
+    padding: $container-padding;
+    background: $page-bg-color-2;
+    border-radius: $container-border-radius;
 }

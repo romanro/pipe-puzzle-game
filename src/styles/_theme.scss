@@ -1,16 +1,28 @@
 //fonts
-$base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
+$base-font-family: 'Red Hat Display', sans-serif;
+$heading-font: 'Tourney', cursive;
 
 // colors:
 $text-color: #282c34;
 $success-color: #1c6e08;
 $danger-color: #ffa159;
 $white-color: #fff;
+$blue-color: #0092ff;
+$blue-color1: #6ec7dc;
+$blue-color2: #42ace2;
 
 $bg-color-1: #8681bd;
 $bg-color-2: #5ba8e1;
 $bg-color-3: #74726f;
+$page-bg-color-1: #26336f;
+$page-bg-color-2: #1e1e3f;
+
+$gradient1: $blue-color1, $blue-color2;
+$gradient2: $page-bg-color-1, $page-bg-color-2;
 
 //paddings
 $container-padding: 18px;
+
+//borders
+$container-border-radius: 30px;
+$container-border: 8px solid $blue-color;

@@ -14,11 +14,11 @@ export const GameMessage: FC<IGameMessageProps> = ({ status, level }) => {
             case GameStates.LEVEL_COMPLETED:
                 return (
                     <div className={styles.successMsg}>
-                        <h2>LEVEL CRACKED!</h2>
+                        <h2 className={styles.msgTitle}>LEVEL CRACKED!</h2>
                         {passwords?.[parseInt(level)] && (
                             <>
                                 <p>Level password is:</p>
-                                <h3>{passwords?.[parseInt(level)]}</h3>
+                                <h3 className={styles.password}>{passwords?.[parseInt(level)]}</h3>
                             </>
                         )}
                         <Link className={styles.btn} to={`/`}>
@@ -29,7 +29,7 @@ export const GameMessage: FC<IGameMessageProps> = ({ status, level }) => {
             case GameStates.LEVEL_FILED:
                 return (
                     <div className={styles.errorMsg}>
-                        <h2>LEVEL FILED!</h2>
+                        <h2 className={styles.msgTitle}>LEVEL FILED!</h2>
                         <p>Only 10 verifications allowed per game, you can't verify your solution</p>
                         <Link className={styles.btn} to={`/`}>
                             PLAY ANOTHER GAME

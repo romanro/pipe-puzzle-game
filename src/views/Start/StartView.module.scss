@@ -1,7 +1,18 @@
 @import '../../styles/theme';
+@import '../../styles/utils';
 
 .container {
     text-align: center;
     padding: $container-padding;
-    border: 7px double $text-color;
+    @include gradient(to bottom, $gradient1);
+    border-radius: $container-border-radius;
+    border: $container-border;
+}
+
+.gameHeader {
+    font-family: $heading-font;
+    font-size: 48px;
+    color: $page-bg-color-2;
+    margin: 5px 0;
+    text-shadow: 0px 0px 8px $white-color;
 }
