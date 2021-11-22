@@ -1,0 +1,37 @@
+@import '../../../styles/theme';
+@import '../../../styles/utils';
+
+.container {
+    @include d-flex(column);
+}
+
+.innerContainer {
+    @include d-flex(row, center, center);
+}
+
+.button {
+    display: block;
+    border: none;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.4;
+        pointer-events: none;
+        cursor: auto;
+    }
+}
+
+.buttonH {
+    @extend .button;
+    width: 200px;
+}
+.buttonV {
+    @extend .button;
+    height: 200px;
+}
+
+.stage {
+    @include gradient(to bottom, $gradient1);
+    border-radius: $container-border-radius / 2;
+    border: $container-border;
+}

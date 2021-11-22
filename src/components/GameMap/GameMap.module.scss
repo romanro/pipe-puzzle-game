@@ -2,7 +2,6 @@
 @import '../../styles/utils';
 .boardContainer {
     position: relative;
-    @include gradient(to bottom, $gradient1);
-    border-radius: $container-border-radius / 2;
-    border: $container-border;
+    background: $blue-color;
+    border-radius: $container-border-radius;
 }

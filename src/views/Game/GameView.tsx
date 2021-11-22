@@ -13,10 +13,13 @@ export const GameView: FC = () => {
 
     const [passwords, setPasswords] = useLocalStorage(LocalStorageKeys.LevelPasswords);
 
+    // TODO: change implementation to useReducer hook
     const [gameMap, setGameMap] = useState<string | null>(null);
     const [turnCounter, setTurnCounter] = useState<number>(0);
-    const [verificationsCounter, setVerificationsCounter] = useState<number>(10);
+    const [verificationsCounter, setVerificationsCounter] = useState<number>(11);
     const [gameState, setGameState] = useState<GameStates>(GameStates.PLAYING);
+
+    let messageTimer: ReturnType<typeof setTimeout>;
 
     /// Socket Callbacks
     const onMessage = useCallback(
@@ -44,6 +47,8 @@ export const GameView: FC = () => {
                         break;
                     case WebSocketResponsesEnum.INCORRECT:
                         setVerificationsCounter(verificationsCounter - 1);
+                        setGameState(GameStates.VERIFICATION_INCORRECT);
+                        messageTimer = setTimeout(() => setGameState(GameStates.PLAYING), 1500);
                         break;
                     case WebSocketResponsesEnum.NO_MORE_VERIFICATIONS:
                         setVerificationsCounter(0);
@@ -56,6 +61,12 @@ export const GameView: FC = () => {
     );
 
     /// Effects
+    useEffect(() => {
+        return () => {
+            clearTimeout(messageTimer);
+        };
+    });
+
     useEffect(() => {
         if (socket.readyState === WebSocket.OPEN) {
             // starting new game

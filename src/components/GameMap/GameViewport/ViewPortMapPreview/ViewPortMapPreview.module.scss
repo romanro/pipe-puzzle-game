@@ -1,0 +1,28 @@
+@import '../../../../styles/theme';
+@import '../../../../styles/utils';
+.container {
+    @include d-flex(column, flex-end, flex-end);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    z-index: +1000;
+}
+
+.btn {
+    @include button($white-color, $blue-color1, $blue-color2, $danger-color, $page-bg-color-1);
+}
+
+.gameMap {
+    box-sizing: border-box;
+    position: relative;
+    border: 2px solid $white-color;
+    background: $blue-color;
+    margin-bottom: 10px;
+}
+.viewport {
+    box-sizing: border-box;
+    position: absolute;
+    border: 2px solid $page-bg-color-1;
+    background: $blue-color1;
+}

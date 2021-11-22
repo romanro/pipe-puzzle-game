@@ -11,10 +11,10 @@ export const GameViewFooter: FC<IGameViewFooterProps> = ({ counter, onVerifyMap 
     return (
         <footer className={styles.footer}>
             <CountButton
-                label={counter === 0 ? 'Only 10 verifications allowed per game' : 'Check your solution'}
+                label={counter < 0 ? 'Only 10 verifications allowed per game' : 'Check your solution'}
                 counter={counter}
                 onClick={onVerifyMap}
-                disabled={counter === 0}
+                disabled={counter < 0}
             />
         </footer>
     );

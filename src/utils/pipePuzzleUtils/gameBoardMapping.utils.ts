@@ -59,10 +59,10 @@ const CHAR_TO_SPRITE_HASH_TABLE: { [key: string]: string } = {
 const LEVEL_TO_SPRITE_SIZE: { [key: number]: number } = {
     1: 60,
     2: 35,
-    3: 15,
-    4: 7,
-    5: 6,
-    6: 5,
+    3: 40,
+    4: 40,
+    5: 40,
+    6: 35,
 };
 
 const CHAR_ROTATE_MAP: { [key: string]: string } = {
