@@ -36,6 +36,12 @@ export const GameMessage: FC<IGameMessageProps> = ({ status, level }) => {
                         </Link>
                     </div>
                 );
+            case GameStates.VERIFICATION_INCORRECT:
+                return (
+                    <div className={styles.errorMsg}>
+                        <h2 className={styles.msgTitle}>STILL NOT THERE</h2>
+                    </div>
+                );
             default:
                 return <div className={styles.msg}></div>;
         }
