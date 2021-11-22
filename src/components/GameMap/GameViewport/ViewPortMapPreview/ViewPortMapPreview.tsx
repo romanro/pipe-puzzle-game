@@ -12,7 +12,7 @@ const ViewPortMapPreview: FC<IViewPortMapPreviewProps> = ({ dimensions, mapSize 
     const { width, height } = mapSize;
 
     useEffect(() => {
-        setSpriteSize(viewportSize.width / width / 2);
+        setSpriteSize(viewportSize.width / width / 2.5);
     }, [width, height, viewportSize.width]);
 
     return (
