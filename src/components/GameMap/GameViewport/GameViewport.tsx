@@ -90,7 +90,7 @@ export const GameViewport: FC<IGameViewportProps> = ({ levelMap, spriteSize, onS
                     {showBtns && (
                         <button
                             className={styles.buttonV}
-                            disabled={vpDimensions.endX === levelMap[0].length - 1}
+                            disabled={vpDimensions.endX === levelMap[0].length}
                             onClick={() => moveMap('right')}>
                             ►
                         </button>
@@ -99,7 +99,7 @@ export const GameViewport: FC<IGameViewportProps> = ({ levelMap, spriteSize, onS
                 {showBtns && (
                     <button
                         className={styles.buttonH}
-                        disabled={vpDimensions.endY === levelMap.length - 1}
+                        disabled={vpDimensions.endY === levelMap.length}
                         onClick={() => moveMap('bottom')}>
                         ▼
                     </button>

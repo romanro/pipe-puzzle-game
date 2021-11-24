@@ -23,8 +23,8 @@ export const calculateDimensions = (
 export const calculateNewViewportMap = (dimensions: ViewportDimensions, levelMap: ViewMap): ViewMap => {
     const newMap = [];
     for (let i = dimensions.startY; i <= dimensions.endY; i++) {
-        const row = levelMap[i].substring(dimensions.startX, dimensions.endX);
-        newMap.push(row);
+        const row = levelMap?.[i]?.substring(dimensions.startX, dimensions.endX);
+        row && newMap.push(row);
     }
     return newMap;
 };
@@ -42,7 +42,7 @@ export const moveDimensions = (
     switch (direction) {
         case 'right':
             startX = vpDimensions.endX - 2;
-            if (startX + vpDimensions.width >= levelMapWidth) startX = levelMapWidth - vpDimensions.width - 1;
+            if (startX + vpDimensions.width > levelMapWidth) startX = levelMapWidth - vpDimensions.width;
             break;
         case 'left':
             startX = startX - vpDimensions.width + 2;
@@ -50,7 +50,7 @@ export const moveDimensions = (
             break;
         case 'bottom':
             startY = vpDimensions.endY - 2;
-            if (startY + vpDimensions.height >= levelMapHeight) startY = levelMapHeight - vpDimensions.height - 1;
+            if (startY + vpDimensions.height > levelMapHeight) startY = levelMapHeight - vpDimensions.height;
             break;
         case 'top':
             startY = startY - vpDimensions.height + 2;
