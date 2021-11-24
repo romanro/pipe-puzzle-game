@@ -1,48 +1,48 @@
-[View Demo Published on Surge] (http://puzzle-challenge.surge.sh/)
+# **Pipe Puzzle Game Challenge**
 
-# Getting Started with Create React App
+## Level passwords obtained
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. First Level password: `JustWarmingUp`
 
-## Available Scripts
+## Known Limitations of the solution
 
-In the project directory, you can run:
+### Basic Architecture
+
+I used **very basic architecture**.
+For my opinion, it's good and usefull for fast development of small applications. State management & Side Effects management (in this case Websocket calls & Local storage interactions) were implemented inside "containers" (view components).
+
+Once application has a chance to grow up, state management should go to Redux (or similar) and Side effects should be manged in services.
+
+### Using React-konva
+
+For faster implementation of canvas, I used **React-Konva** 3-rd party. I can imagine, that performance of canvas without konva, will be better.
+
+### UX limitations
+
+Scrolling of the big level maps should be changed to drag & drop, for better usability (now it implemented with buttons).
+Animations should be added for better user experience.
+
+## Design (Architecture) decisions
+
+1. Lightweight & fast development implementation, using Hooks & Function Components
+2. State management in 'Container' components instead of implementation of Redux Store
+3. Websocket communications troughs hook, and not full service implementation
+4. SCSS Modules for styling with basic theme & utils imported in each module
+5. Kanva for rendering game canvas
+
+## To run the game
+
+### clone repository from `git@github.com:romanro/pipe-puzzle-game.git`
+
+### `yarn install`
+
+To install all dependencies
 
 ### `yarn start`
 
-Runs the app in the development mode.\
+Runs the game in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Game demo
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can see this Game [Demo Published on Surge](http://puzzle-challenge.surge.sh/)
