@@ -22,12 +22,14 @@ export const StartView: FC = () => {
     }, [passwords]);
 
     return (
-        <div className={styles.container}>
+        <div>
             <h1 className={styles.gameHeader}>
                 THE PIPES<br></br>PUZZLE
             </h1>
-            <h3>Choose game level:</h3>
-            <LevelsList levels={levels} />
+            <div className={styles.container}>
+                <h3>Choose game level:</h3>
+                <LevelsList levels={levels} />
+            </div>
         </div>
     );
 };

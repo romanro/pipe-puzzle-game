@@ -4,6 +4,6 @@
 .gameViewContainer {
     position: relative;
     padding: $container-padding;
-    background: $page-bg-color-2;
+    background: rgba($color: $page-bg-color-2, $alpha: 0.8);
     border-radius: $container-border-radius;
 }

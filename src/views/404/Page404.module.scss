@@ -1,1 +1,7 @@
 @import '../../styles/theme';
+
+.container {
+    font-family: $heading-font;
+    color: $white-color;
+    text-align: center;
+}
