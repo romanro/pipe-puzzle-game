@@ -3,6 +3,7 @@
 ## Level passwords obtained
 
 1. First Level password: `JustWarmingUp`
+2. Second Level password: `DefinitelyWarm`
 
 ## Known Limitations of the solution
 
